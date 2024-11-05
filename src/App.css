@@ -1,0 +1,231 @@
+/* App.css */
+
+/* Global styles */
+@keyframes bubble-animation {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh);
+    opacity: 0;
+  }
+}
+
+/* Bubble styles */
+.bubble {
+  position: absolute;
+  border-radius: 50%;
+  background-color: rgba(173, 216, 230, 0.6);
+  animation: bubble-animation linear infinite;
+  bottom: -100px;
+}
+
+.bubble:nth-child(1) { width: 40px; height: 40px; left: 10%; animation-duration: 5s; }
+.bubble:nth-child(2) { width: 30px; height: 30px; left: 20%; animation-duration: 4s; animation-delay: 1s; }
+.bubble:nth-child(3) { width: 50px; height: 50px; left: 30%; animation-duration: 6s; animation-delay: 2s; }
+.bubble:nth-child(4) { width: 20px; height: 20px; left: 40%; animation-duration: 3s; animation-delay: 1.5s; }
+.bubble:nth-child(5) { width: 60px; height: 60px; left: 50%; animation-duration: 7s; animation-delay: 3s; }
+
+/* Body styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: linear-gradient(270deg, #1b0117, #5a3563, #9b51a0, #04053e, #020121);
+  background-size: 800% 800%;
+  animation: gradient-animation 15s ease infinite;
+  color: #ffffff; /* Set global text color to white */
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  position: relative;
+}
+
+@keyframes gradient-animation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* App container styles */
+.App {
+  min-height: 100vh;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Frame styles */
+.frame {
+  max-width: 800px;
+  width: 100%;
+  margin: 20px auto;
+  padding: 30px;
+  border-radius: 15px;
+  background: linear-gradient(to right, #7b2281, #0c000c);
+  box-shadow: 0 0 10px rgba(100, 250, 500, 0.5);
+}
+
+/* Headings */
+h1, h2, h3 {
+  text-align: center;
+  color: #ffffff; /* Set heading text color to white */
+}
+
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 30px;
+}
+
+h2 {
+  font-size: 1.5em;
+  margin: 20px 0;
+}
+
+/* Inputs and Select */
+.input-container input,
+.input-container select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #100101;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  background-color: rgb(218, 214, 214);
+  transition: all 0.3s ease;
+  color: #000000; /* Text inside inputs will be black for better contrast */
+}
+
+input[type="text"]:hover,
+input[type="range"]:hover,
+select:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+input[type="text"]:focus,
+select:focus {
+  outline: none;
+  box-shadow: 0 0 10px rgba(0, 191, 255, 0.5);
+}
+
+/* Buttons */
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  margin: 25px 0;
+}
+
+button {
+  flex: 1;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+button:active {
+  transform: scale(0.98);
+  box-shadow: none;
+}
+
+button:first-child { background-color: #6b0e17; }
+button:nth-child(2) { background-color: #ffa500; }
+button:last-child { background-color: #32cd32; }
+
+button:first-child:hover { background-color: #a73b40; }
+button:nth-child(2):hover { background-color: #ff8c00; }
+button:last-child:hover { background-color: #28a745; }
+
+/* Progress Bar */
+.progress-container {
+  width: 100%;
+  height: 20px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 20px 0;
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: #092f01;
+  transition: width 0.5s ease;
+  position: relative;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #192125;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #489e83;
+  border-radius: 4px;
+}
+
+/* Review Section Styles */
+.review-section {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #070a55;
+  border-radius: 8px;
+  color: #ffffff;
+}
+
+.review-section h2 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.review-section textarea {
+  width: 100%;
+  padding: 2px;
+  margin: 10px 0;
+  border-radius: 4px;
+  border: none;
+  resize: vertical;
+}
+
+.review-section input[type="number"] {
+  width: 60px;
+  margin-right: 10px;
+}
+
+.review-section button {
+  background-color: #ffa500;
+  color: white;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.review-list {
+  margin-top: 20px;
+}
+
+.review-item {
+  background-color: #282828;
+  padding: 10px;
+  border-radius: 4px;
+  margin: 5px 0;
+}
